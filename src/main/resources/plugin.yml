@@ -1,0 +1,5 @@
+name: LobbySystem
+version: 0.1
+author: decompilen
+main: com.github.decompilen.lobbysystem.initializer.PluginInitializer
+website: https://chunkfactory.com/community/members/decompilen.6276/
