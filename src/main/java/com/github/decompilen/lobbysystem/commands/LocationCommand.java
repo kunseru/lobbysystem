@@ -29,9 +29,6 @@ public class LocationCommand extends LobbyCommand {
             String action = args[0];
             String name = args[1];
             LocationService locationService = getServiceRegistry().getService(LocationService.class);
-
-            System.out.println(action);
-
             switch (action) {
                 case "add":
                 case "set": {

@@ -19,6 +19,17 @@ public class MessageCommand extends LobbyCommand {
             commandSender.sendMessage(messageService.getMessage("no_permissions"));
             return true;
         }
+
+        if (args.length == 1) {
+            String key = args[0];
+            if (messageService.has(key)) {
+                commandSender.sendMessage(messageService.getMessage(key));
+                return true;
+            }
+            commandSender.sendMessage(messageService.getMessage("message_command_key_not_existing"));
+        } else {
+            commandSender.sendMessage(messageService.getMessage("message_command_usage", s));
+        }
         return false;
     }
 }

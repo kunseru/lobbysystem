@@ -1,11 +1,6 @@
 package com.github.decompilen.lobbysystem.initializer;
 
 import com.github.decompilen.lobbysystem.LobbySystem;
-import com.github.decompilen.lobbysystem.commands.DeveloperCommand;
-import com.github.decompilen.lobbysystem.commands.LocationCommand;
-import com.github.decompilen.lobbysystem.service.command.CommandService;
-import com.github.decompilen.lobbysystem.service.command.abstracts.LobbyCommand;
-import com.github.decompilen.lobbysystem.service.command.model.Command;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,18 +19,6 @@ public class PluginInitializer extends JavaPlugin {
         }
 
         this.lobbySystem = new LobbySystem(this);
-
-        CommandService commandService = lobbySystem.getServiceRegistry().getService(CommandService.class);
-
-        for (Command lobbyCommand : commandService.getConfiguration().getLobbyCommands()) {
-            if (lobbyCommand.getIdentifier().equals("location")) {
-                LobbyCommand locationCommand = new LocationCommand(lobbyCommand);
-                locationCommand.register(getCommandMap());
-            } else if (lobbyCommand.getIdentifier().equals("developer")) {
-                LobbyCommand developerCommand = new DeveloperCommand(lobbyCommand);
-                developerCommand.register(getCommandMap());
-            }
-        }
     }
 
     @Override

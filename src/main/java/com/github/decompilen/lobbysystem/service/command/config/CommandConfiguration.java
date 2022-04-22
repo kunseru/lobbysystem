@@ -4,6 +4,7 @@ import com.github.decompilen.lobbysystem.config.LobbyConfiguration;
 import com.github.decompilen.lobbysystem.service.command.model.Command;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +12,10 @@ import java.util.List;
 @Getter
 public class CommandConfiguration extends LobbyConfiguration {
 
-    private List<Command> lobbyCommands = Arrays.asList(new Command("location", "lobby.manage.location", "location", Collections.singletonList("warp")), new Command("developer", "none", "developer", Collections.singletonList("dev")));
+    private List<Command> lobbyCommands = Arrays.asList(
+            new Command("message", "lobby.debug.message", "message", new ArrayList<>()),
+            new Command("location", "lobby.manage.location", "location", Collections.singletonList("warp")),
+            new Command("developer", "none", "developer", Collections.singletonList("dev")));
 
     public CommandConfiguration(String fileName) {
         super(fileName);

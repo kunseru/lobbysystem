@@ -34,6 +34,11 @@ public class MessageService extends LobbyService {
         return optional.orElse(new Message("error", "§cAn unexpected error occurred!")).getMessage();
     }
 
+    public boolean has(String key) {
+        Optional<Message> optional = configuration.getMessages().stream().filter(message -> message.getKey().equalsIgnoreCase(key)).findAny();
+        return optional.isPresent();
+    }
+
     public String getMessage(String key, Object... args) {
         Optional<Message> optional = configuration.getMessages().stream().filter(message -> message.getKey().equalsIgnoreCase(key)).findAny();
         if (!optional.isPresent()) {
@@ -42,6 +47,9 @@ public class MessageService extends LobbyService {
             } catch (MessageException e) {
                 e.printStackTrace();
             }
+        }
+        if (args.length == 0) {
+            return optional.orElse(new Message("error", "§cAn unexpected error occurred!")).getMessage().replace("{prefix}", getPrefix());
         }
         return String.format(optional.orElse(new Message("error", "§cAn unexpected error occurred!")).getMessage(), args).replace("{prefix}", getPrefix());
     }
