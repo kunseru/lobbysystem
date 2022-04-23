@@ -8,6 +8,7 @@ import com.github.decompilen.lobbysystem.service.ServiceRegistry;
 import com.github.decompilen.lobbysystem.service.command.CommandService;
 import com.github.decompilen.lobbysystem.service.command.abstracts.LobbyCommand;
 import com.github.decompilen.lobbysystem.service.command.model.Command;
+import com.github.decompilen.lobbysystem.service.items.ItemService;
 import com.github.decompilen.lobbysystem.service.location.LocationService;
 import com.github.decompilen.lobbysystem.service.message.MessageService;
 import com.github.decompilen.lobbysystem.service.motd.MotdService;
@@ -59,6 +60,7 @@ public class LobbySystem {
         TablistService tablistService = serviceRegistry.registerService(TablistService.class);
         ScoreboardService scoreboardService = serviceRegistry.registerService(ScoreboardService.class);
         MotdService motdService = serviceRegistry.registerService(MotdService.class);
+        ItemService itemService = serviceRegistry.registerService(ItemService.class);
 
         System.out.println("=======================");
         System.out.println("Following settings:");
@@ -82,6 +84,8 @@ public class LobbySystem {
                         }
                     }
                 }
+
+                itemService.set(event.getPlayer());
             }
 
             @EventHandler
