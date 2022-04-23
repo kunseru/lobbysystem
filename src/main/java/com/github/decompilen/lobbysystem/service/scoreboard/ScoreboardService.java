@@ -4,8 +4,10 @@ import com.github.decompilen.lobbysystem.LobbySystem;
 import com.github.decompilen.lobbysystem.service.LobbyService;
 import com.github.decompilen.lobbysystem.service.scoreboard.builder.ScoreboardBuilder;
 import com.github.decompilen.lobbysystem.service.scoreboard.config.ScoreboardConfiguration;
+import lombok.Getter;
 import org.bukkit.entity.Player;
 
+@Getter
 public class ScoreboardService extends LobbyService {
 
     private final ScoreboardConfiguration configuration = new ScoreboardConfiguration(LobbySystem.getInstance().getPlugin().getDataFolder() + "/scoreboard");

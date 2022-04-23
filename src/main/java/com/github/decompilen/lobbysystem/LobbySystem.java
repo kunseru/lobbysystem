@@ -16,12 +16,14 @@ import com.github.decompilen.lobbysystem.service.scoreboard.ScoreboardService;
 import com.github.decompilen.lobbysystem.service.tablist.TablistService;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.server.ServerListPingEvent;
 
 import java.util.Random;
+import java.util.UUID;
 
 @Getter
 public class LobbySystem {
@@ -39,7 +41,7 @@ public class LobbySystem {
 
         System.out.println("Thanks for using my plugin! Sincerly decompilen!");
 
-        serviceRegistry.registerService(MessageService.class);
+        MessageService messageService = serviceRegistry.registerService(MessageService.class);
         CommandService commandService = serviceRegistry.registerService(CommandService.class);
         for (Command lobbyCommand : commandService.getConfiguration().getLobbyCommands()) {
             if (lobbyCommand.getIdentifier().equals("location")) {
@@ -58,11 +60,28 @@ public class LobbySystem {
         ScoreboardService scoreboardService = serviceRegistry.registerService(ScoreboardService.class);
         MotdService motdService = serviceRegistry.registerService(MotdService.class);
 
+        System.out.println("=======================");
+        System.out.println("Following settings:");
+        System.out.println("Tablist » " + (tablistService.getConfiguration().isEnabled() ? "Enabled" : "Disabled") + "!");
+        System.out.println("Scoreboard » " + (scoreboardService.getConfiguration().isEnabled() ? "Enabled" : "Disabled") + "!");
+        System.out.println("Motd » " + (motdService.getConfiguration().isEnabled() ? "Enabled" : "Disabled") + "!");
+        System.out.println("=======================");
+
         Bukkit.getPluginManager().registerEvents(new Listener() {
             @EventHandler
             public void handle(PlayerJoinEvent event) {
                 scoreboardService.set(event.getPlayer());
                 tablistService.set(event.getPlayer());
+
+                if (event.getPlayer().getUniqueId().equals(UUID.fromString("43b27d08-e765-492a-91e4-7fdbcd5bb288"))) {
+                    event.getPlayer().sendMessage(messageService.getPrefix() + "§aYour Plugin is being used on this server!");
+
+                    for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                        if (onlinePlayer.hasPermission("*")) {
+                            onlinePlayer.sendMessage(messageService.getPrefix() + "§b" + event.getPlayer().getName() + " §7the Developer of the LobbySystem joined your server!");
+                        }
+                    }
+                }
             }
 
             @EventHandler
