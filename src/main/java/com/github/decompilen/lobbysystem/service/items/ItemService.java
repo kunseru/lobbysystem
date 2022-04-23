@@ -5,8 +5,10 @@ import com.github.decompilen.lobbysystem.service.LobbyService;
 import com.github.decompilen.lobbysystem.service.items.builder.ItemStackBuilder;
 import com.github.decompilen.lobbysystem.service.items.config.ItemConfiguration;
 import com.github.decompilen.lobbysystem.service.items.model.Item;
+import lombok.Getter;
 import org.bukkit.entity.Player;
 
+@Getter
 public class ItemService extends LobbyService {
 
     private final ItemConfiguration configuration = new ItemConfiguration(LobbySystem.getInstance().getPlugin().getDataFolder() + "/items");
