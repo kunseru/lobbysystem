@@ -16,6 +16,7 @@ public class MessageConfiguration extends LobbyConfiguration {
             new Message("message_command_usage", "{prefix} §cUsage: §7/%s <key>"),
             new Message("message_command_key_existing", "{prefix} §a"),
             new Message("message_command_key_not_existing", "{prefix} §cThere is no message with that key in messages.json!"),
+            new Message("location_teleport_not_found", "{prefix} §cThe Location with the name %s wasn't found"),
             new Message("location_command_usage", "{prefix} §cUsage: §7/%s <set/delete> <name>"),
             new Message("location_command_set", "{prefix} §aLocation with name %s successfully set!"),
             new Message("location_command_set_already_existing", "{prefix} §cLocation with name %s already exists!"),

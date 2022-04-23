@@ -3,6 +3,7 @@ package com.github.decompilen.lobbysystem;
 import com.github.decompilen.lobbysystem.commands.DeveloperCommand;
 import com.github.decompilen.lobbysystem.commands.LocationCommand;
 import com.github.decompilen.lobbysystem.commands.MessageCommand;
+import com.github.decompilen.lobbysystem.event.handler.InventoryClickHandler;
 import com.github.decompilen.lobbysystem.event.handler.PlayerInteractHandler;
 import com.github.decompilen.lobbysystem.event.handler.PlayerJoinHandler;
 import com.github.decompilen.lobbysystem.event.handler.ServerListPingHandler;
@@ -70,5 +71,6 @@ public class LobbySystem {
         pluginManager.registerEvents(new PlayerInteractHandler(), plugin);
         pluginManager.registerEvents(new PlayerJoinHandler(), plugin);
         pluginManager.registerEvents(new ServerListPingHandler(), plugin);
+        pluginManager.registerEvents(new InventoryClickHandler(), plugin);
     }
 }
