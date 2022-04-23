@@ -1,6 +1,6 @@
 package com.github.decompilen.lobbysystem.service.gadget;
 
-import com.github.decompilen.lobbysystem.service.abstracts.LobbyService;
+import com.github.decompilen.lobbysystem.service.LobbyService;
 
 public class GadgetService extends LobbyService {
 

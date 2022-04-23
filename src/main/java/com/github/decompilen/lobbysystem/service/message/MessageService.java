@@ -2,7 +2,7 @@ package com.github.decompilen.lobbysystem.service.message;
 
 import com.github.decompilen.lobbysystem.LobbySystem;
 import com.github.decompilen.lobbysystem.exception.MessageException;
-import com.github.decompilen.lobbysystem.service.abstracts.LobbyService;
+import com.github.decompilen.lobbysystem.service.LobbyService;
 import com.github.decompilen.lobbysystem.service.message.config.MessageConfiguration;
 import com.github.decompilen.lobbysystem.service.message.model.Message;
 

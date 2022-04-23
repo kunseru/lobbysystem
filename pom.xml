@@ -15,18 +15,12 @@
 
     <repositories>
         <repository>
-            <id>spigot</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>minecraft</id>
+            <url>https://nexus.es-intern.de/repository/spigot/</url>
         </repository>
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -37,6 +31,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.8.8</version>
         </dependency>
     </dependencies>
 

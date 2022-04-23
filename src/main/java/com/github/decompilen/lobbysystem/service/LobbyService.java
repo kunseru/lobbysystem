@@ -1,4 +1,4 @@
-package com.github.decompilen.lobbysystem.service.abstracts;
+package com.github.decompilen.lobbysystem.service;
 
 public abstract class LobbyService {
 

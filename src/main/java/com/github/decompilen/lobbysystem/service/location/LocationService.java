@@ -2,7 +2,7 @@ package com.github.decompilen.lobbysystem.service.location;
 
 import com.github.decompilen.lobbysystem.LobbySystem;
 import com.github.decompilen.lobbysystem.service.location.config.LocationConfiguration;
-import com.github.decompilen.lobbysystem.service.abstracts.LobbyService;
+import com.github.decompilen.lobbysystem.service.LobbyService;
 import com.github.decompilen.lobbysystem.service.location.model.LobbyLocation;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

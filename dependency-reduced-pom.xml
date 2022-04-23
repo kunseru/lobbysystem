@@ -30,18 +30,10 @@
   </build>
   <repositories>
     <repository>
-      <id>spigot</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      <id>minecraft</id>
+      <url>https://nexus.es-intern.de/repository/spigot/</url>
     </repository>
   </repositories>
-  <dependencies>
-    <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot-api</artifactId>
-      <version>1.8.8-R0.1-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>

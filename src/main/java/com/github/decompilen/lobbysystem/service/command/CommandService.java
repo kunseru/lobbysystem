@@ -1,7 +1,7 @@
 package com.github.decompilen.lobbysystem.service.command;
 
 import com.github.decompilen.lobbysystem.LobbySystem;
-import com.github.decompilen.lobbysystem.service.abstracts.LobbyService;
+import com.github.decompilen.lobbysystem.service.LobbyService;
 import com.github.decompilen.lobbysystem.service.command.config.CommandConfiguration;
 import lombok.Getter;
 

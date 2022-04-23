@@ -1,7 +1,5 @@
 package com.github.decompilen.lobbysystem.service;
 
-import com.github.decompilen.lobbysystem.service.abstracts.LobbyService;
-
 import java.util.ArrayList;
 import java.util.List;
 
